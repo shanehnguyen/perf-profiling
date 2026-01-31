@@ -12,7 +12,7 @@ NUM_CLIENTS = int(sys.argv[1]) if len(sys.argv) > 1 else 10
 DURATION_SECONDS = 10
 NUM_CONNECTIONS = NUM_CLIENTS
 
-pool = SimpleConnectionPool(1, NUM_CONNECTIONS, dbname="shane", host="localhost")
+pool = SimpleConnectionPool(1, NUM_CONNECTIONS, dbname="shane", host="127.0.0.1", port=5432, user="shane", password="shane123")
 
 queries = [
     ("user_posts", "user_id", "SELECT p.id, p.body FROM posts p WHERE p.user_id = %s ORDER BY p.created_at DESC LIMIT 20"),
