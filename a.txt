@@ -1,0 +1,12 @@
+wsl
+cd /home/shane/projects/postgresql-perf/postgresql-16.1
+
+# Make sure PostgreSQL is running
+pg_ctl -D ~/pgsql/data status
+
+# If it says "no server running", start it:
+pg_ctl -D ~/pgsql/data start
+
+# Load the schema
+psql -f schema.sql
+```
